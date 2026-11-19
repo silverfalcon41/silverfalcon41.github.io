@@ -1,0 +1,1603 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美图写真_品牌官网_光影美学影像社区</title>
+<meta name="description" content="美图写真官方网站，专注高品质写真影像的原创品牌，汇聚专业创作者与多元风格，打造值得信赖的影像内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121214'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23ff5c8a' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23ff5c8a'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --mt-bg:#0f0f12;
+    --mt-bg2:#17171c;
+    --mt-card:#1d1d24;
+    --mt-line:#2c2c36;
+    --mt-txt:#e9e9ef;
+    --mt-sub:#9d9dad;
+    --mt-pink:#ff5c8a;
+    --mt-pink2:#ff8aae;
+    --mt-cyan:#59e0d6;
+    --mt-amber:#f7c948;
+    --mt-radius:16px;
+    --mt-sticky-h:104px;
+    --mt-shadow:0 18px 40px rgba(0,0,0,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:var(--mt-sticky-h)}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+    background:var(--mt-bg);
+    color:var(--mt-txt);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  ul{list-style:none}
+
+  .mt-wrap{width:min(1200px,92%);margin:0 auto}
+
+  /* ========== 吸顶：公告 + 页头 ========== */
+  .mt-sticky-shell{
+    position:sticky;top:0;z-index:90;
+  }
+  .mt-announce{
+    background:linear-gradient(90deg,#ff5c8a,#ff8aae 55%,#59e0d6);
+    color:#101014;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.3px;
+  }
+  .mt-announce .mt-wrap{
+    display:flex;align-items:center;gap:10px;
+    min-height:38px;padding:8px 0;flex-wrap:wrap;
+  }
+  .mt-announce-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:#101014;flex:none;
+    animation:mt-pulse 1.6s infinite;
+  }
+  @keyframes mt-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+  .mt-announce-label{
+    background:#101014;color:#ff8aae;
+    padding:1px 9px;border-radius:20px;
+    font-size:11px;letter-spacing:1px;flex:none;
+  }
+  .mt-announce-link{
+    margin-left:auto;font-size:12px;
+    border-bottom:1px solid rgba(16,16,20,.5);
+    white-space:nowrap;
+  }
+
+  .mt-header{
+    background:rgba(15,15,18,.88);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--mt-line);
+  }
+  .mt-header-inner{
+    display:flex;align-items:center;gap:22px;
+    min-height:66px;padding:10px 0;
+  }
+  .mt-brand{display:flex;align-items:center;gap:10px;flex:none}
+  .mt-brand-mark{
+    width:38px;height:38px;border-radius:12px;
+    background:linear-gradient(135deg,#ff5c8a,#59e0d6);
+    display:grid;place-items:center;font-weight:800;font-size:17px;color:#101014;
+    box-shadow:0 0 0 1px rgba(255,255,255,.12) inset;
+  }
+  .mt-brand-name{font-size:19px;font-weight:800;letter-spacing:1px}
+  .mt-brand-name small{display:block;font-size:10px;font-weight:400;color:var(--mt-sub);letter-spacing:2px}
+  .mt-nav{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap}
+  .mt-nav a{
+    padding:7px 13px;border-radius:9px;font-size:14px;color:var(--mt-sub);
+    transition:.22s;white-space:nowrap;
+  }
+  .mt-nav a:hover{color:var(--mt-txt);background:var(--mt-bg2)}
+  .mt-nav a.is-active{color:#101014;background:var(--mt-pink);font-weight:600}
+
+  .mt-search{
+    margin-left:auto;display:flex;align-items:center;gap:8px;
+    background:var(--mt-bg2);border:1px solid var(--mt-line);
+    border-radius:11px;padding:6px 10px;min-width:190px;max-width:260px;
+  }
+  .mt-search input{
+    background:none;border:none;outline:none;color:var(--mt-txt);
+    font-size:13px;width:100%;padding:2px 0;
+  }
+  .mt-search input::placeholder{color:#5d5d6d}
+  .mt-search button{color:var(--mt-pink);font-size:13px;padding:2px 4px;flex:none}
+  .mt-search-hint{
+    position:absolute;margin-top:6px;background:var(--mt-card);
+    border:1px solid var(--mt-line);border-radius:11px;
+    padding:8px 12px;font-size:12px;color:var(--mt-cyan);
+    box-shadow:var(--mt-shadow);display:none;white-space:nowrap;
+  }
+  .mt-search-hint.is-show{display:block;animation:mt-fade .25s}
+  @keyframes mt-fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+  .mt-burger{
+    display:none;flex-direction:column;gap:5px;margin-left:auto;padding:9px;
+    border:1px solid var(--mt-line);border-radius:10px;
+  }
+  .mt-burger span{display:block;width:19px;height:2px;background:var(--mt-txt);border-radius:2px;transition:.25s}
+  .mt-burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .mt-burger.is-open span:nth-child(2){opacity:0}
+  .mt-burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  .mt-mobile-panel{display:none;border-top:1px solid var(--mt-line);background:var(--mt-bg2)}
+  .mt-mobile-panel.is-open{display:block}
+  .mt-mobile-panel a{display:block;padding:12px 20px;font-size:14px;border-bottom:1px solid var(--mt-line);color:var(--mt-sub)}
+  .mt-mobile-panel a:last-child{border-bottom:none}
+
+  /* ========== 通用 ========== */
+  .mt-sec{padding:64px 0}
+  .mt-sec-alt{background:var(--mt-bg2)}
+  .mt-sec-head{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+  .mt-eyebrow{
+    font-size:12px;letter-spacing:3px;color:var(--mt-pink);
+    text-transform:uppercase;font-weight:700;
+  }
+  .mt-sec-title{font-size:clamp(23px,3vw,31px);font-weight:800;letter-spacing:.5px}
+  .mt-sec-desc{color:var(--mt-sub);font-size:14px;max-width:620px}
+  .mt-sec-more{margin-left:auto;font-size:13px;color:var(--mt-cyan);border-bottom:1px dashed rgba(89,224,214,.5);padding-bottom:2px}
+
+  .mt-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 22px;border-radius:11px;font-size:14px;font-weight:600;
+    transition:.22s;border:1px solid transparent;
+  }
+  .mt-btn-primary{background:var(--mt-pink);color:#101014}
+  .mt-btn-primary:hover{background:var(--mt-pink2);transform:translateY(-2px)}
+  .mt-btn-ghost{border-color:var(--mt-line);color:var(--mt-txt)}
+  .mt-btn-ghost:hover{border-color:var(--mt-pink);color:var(--mt-pink)}
+  .mt-tag{
+    display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;
+    background:rgba(255,92,138,.14);color:var(--mt-pink2);letter-spacing:.5px;
+  }
+  .mt-tag-cyan{background:rgba(89,224,214,.13);color:var(--mt-cyan)}
+  .mt-tag-amber{background:rgba(247,201,72,.13);color:var(--mt-amber)}
+
+  /* ========== 首屏 ========== */
+  .mt-hero{position:relative;overflow:hidden;padding:70px 0 60px}
+  .mt-hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(620px 340px at 82% 8%,rgba(255,92,138,.22),transparent 65%),
+      radial-gradient(520px 320px at 8% 90%,rgba(89,224,214,.16),transparent 62%);
+    pointer-events:none;
+  }
+  .mt-hero-grid{
+    position:relative;display:grid;grid-template-columns:1.05fr .95fr;
+    gap:44px;align-items:center;
+  }
+  .mt-hero-kicker{
+    display:inline-flex;align-items:center;gap:9px;
+    background:rgba(255,92,138,.1);border:1px solid rgba(255,92,138,.35);
+    color:var(--mt-pink2);font-size:12px;letter-spacing:1.5px;
+    padding:6px 14px;border-radius:30px;margin-bottom:20px;
+  }
+  .mt-hero h1{
+    font-size:clamp(40px,6vw,66px);line-height:1.06;font-weight:900;
+    letter-spacing:1px;margin-bottom:18px;
+  }
+  .mt-hero h1 em{
+    font-style:normal;
+    background:linear-gradient(120deg,#ff5c8a,#ff8aae 45%,#59e0d6);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .mt-hero-slogan{font-size:17px;color:var(--mt-sub);max-width:480px;margin-bottom:22px}
+  .mt-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+  .mt-stats{display:flex;gap:34px;flex-wrap:wrap}
+  .mt-stat b{display:block;font-size:27px;font-weight:900;color:var(--mt-cyan);line-height:1.2}
+  .mt-stat span{font-size:12.5px;color:var(--mt-sub);letter-spacing:.5px}
+
+  .mt-hero-visual{position:relative}
+  .mt-hero-frame{
+    position:relative;border-radius:22px;overflow:hidden;
+    border:1px solid var(--mt-line);box-shadow:var(--mt-shadow);
+    aspect-ratio:4/5;
+  }
+  .mt-hero-frame img{width:100%;height:100%;object-fit:cover}
+  .mt-hero-badge{
+    position:absolute;bottom:16px;left:16px;right:16px;
+    background:rgba(15,15,18,.76);backdrop-filter:blur(8px);
+    border:1px solid var(--mt-line);border-radius:13px;
+    padding:11px 15px;display:flex;align-items:center;gap:11px;
+  }
+  .mt-hero-badge b{font-size:14px}
+  .mt-hero-badge span{font-size:12px;color:var(--mt-sub);margin-left:auto}
+  .mt-live-dot{
+    width:8px;height:8px;border-radius:50%;background:var(--mt-pink);flex:none;
+    animation:mt-pulse 1.5s infinite;
+  }
+  .mt-hero-chip{
+    position:absolute;top:16px;right:-12px;
+    background:var(--mt-card);border:1px solid var(--mt-line);
+    border-radius:13px;padding:9px 14px;font-size:12px;
+    box-shadow:var(--mt-shadow);
+  }
+  .mt-hero-chip b{display:block;color:var(--mt-amber);font-size:15px}
+
+  /* ========== 关键词解析（长文） ========== */
+  .mt-about-grid{display:grid;grid-template-columns:.9fr 1.4fr;gap:44px;align-items:start}
+  .mt-about-card{
+    background:var(--mt-card);border:1px solid var(--mt-line);
+    border-radius:var(--mt-radius);padding:26px;position:sticky;top:calc(var(--mt-sticky-h) + 18px);
+  }
+  .mt-about-card h3{font-size:17px;margin-bottom:12px}
+  .mt-about-card p{font-size:13.5px;color:var(--mt-sub);margin-bottom:14px}
+  .mt-about-list li{
+    display:flex;gap:9px;font-size:13px;color:var(--mt-sub);
+    padding:7px 0;border-bottom:1px dashed var(--mt-line);
+  }
+  .mt-about-list li:last-child{border-bottom:none}
+  .mt-about-list li::before{content:"◆";color:var(--mt-pink);font-size:9px;line-height:2}
+  .mt-prose p{font-size:14.5px;color:#c5c5d2;margin-bottom:17px;text-align:justify}
+  .mt-prose h3{font-size:18px;margin:26px 0 11px;color:var(--mt-txt);position:relative;padding-left:14px}
+  .mt-prose h3::before{
+    content:"";position:absolute;left:0;top:6px;bottom:6px;width:3px;
+    border-radius:3px;background:linear-gradient(var(--mt-pink),var(--mt-cyan));
+  }
+  .mt-prose strong{color:var(--mt-pink2);font-weight:600}
+
+  /* ========== 精选内容 ========== */
+  .mt-feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .mt-feature-card{
+    background:var(--mt-card);border:1px solid var(--mt-line);
+    border-radius:var(--mt-radius);overflow:hidden;
+    transition:.28s;display:flex;flex-direction:column;
+  }
+  .mt-feature-card:hover{transform:translateY(-5px);border-color:rgba(255,92,138,.55);box-shadow:var(--mt-shadow)}
+  .mt-cover{position:relative;aspect-ratio:16/9;overflow:hidden;background:#101014}
+  .mt-cover img{width:100%;height:100%;object-fit:cover;transition:.5s}
+  .mt-feature-card:hover .mt-cover img{transform:scale(1.05)}
+  .mt-cover::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(10,10,14,.82),rgba(10,10,14,0) 58%);
+  }
+  .mt-cover-tag{position:absolute;top:11px;left:11px;z-index:2}
+  .mt-play{
+    position:absolute;inset:0;margin:auto;width:52px;height:52px;z-index:2;
+    border-radius:50%;background:rgba(255,92,138,.9);
+    display:grid;place-items:center;color:#101014;font-size:17px;
+    box-shadow:0 0 0 7px rgba(255,92,138,.16);
+  }
+  .mt-cover-dur{
+    position:absolute;bottom:10px;right:11px;z-index:2;
+    background:rgba(10,10,14,.8);border-radius:6px;
+    font-size:11px;padding:1px 7px;color:#d8d8e2;
+  }
+  .mt-feature-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:9px;flex:1}
+  .mt-feature-body h3{font-size:16.5px;line-height:1.45}
+  .mt-feature-body p{font-size:13px;color:var(--mt-sub);flex:1}
+  .mt-meta{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--mt-sub);flex-wrap:wrap}
+  .mt-avatar{
+    width:26px;height:26px;border-radius:50%;flex:none;
+    display:grid;place-items:center;font-size:11px;font-weight:700;color:#101014;
+  }
+  .mt-card-actions{display:flex;gap:8px;margin-top:4px}
+  .mt-act{
+    font-size:12px;color:var(--mt-sub);border:1px solid var(--mt-line);
+    border-radius:8px;padding:4px 11px;transition:.2s;display:inline-flex;align-items:center;gap:5px;
+  }
+  .mt-act:hover{border-color:var(--mt-pink);color:var(--mt-pink2)}
+  .mt-act.is-liked{color:var(--mt-pink);border-color:var(--mt-pink);background:rgba(255,92,138,.1)}
+  .mt-act.is-saved{color:var(--mt-cyan);border-color:var(--mt-cyan);background:rgba(89,224,214,.08)}
+  .mt-act-more{margin-left:auto}
+
+  /* ========== 热门视频流 ========== */
+  .mt-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .mt-vcard{
+    background:var(--mt-card);border:1px solid var(--mt-line);
+    border-radius:14px;overflow:hidden;transition:.26s;
+    display:flex;flex-direction:column;
+  }
+  .mt-vcard:hover{transform:translateY(-4px);box-shadow:var(--mt-shadow);border-color:rgba(89,224,214,.5)}
+  .mt-vcard .mt-cover{aspect-ratio:16/9}
+  .mt-vcard-body{padding:13px 15px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .mt-vcard-body h3{font-size:14.5px;line-height:1.5}
+  .mt-vcard-body p{font-size:12.5px;color:var(--mt-sub);flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .mt-vcard-foot{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--mt-sub)}
+  .mt-num{display:inline-flex;align-items:center;gap:7px}
+
+  /* ========== 创作者 ========== */
+  .mt-creators{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .mt-creator{
+    background:var(--mt-card);border:1px solid var(--mt-line);
+    border-radius:var(--mt-radius);padding:22px 18px;text-align:center;
+    transition:.26s;cursor:pointer;
+  }
+  .mt-creator:hover{transform:translateY(-4px);border-color:rgba(255,92,138,.55)}
+  .mt-creator-ava{
+    width:62px;height:62px;border-radius:50%;margin:0 auto 12px;
+    display:grid;place-items:center;font-size:21px;font-weight:800;color:#101014;
+    box-shadow:0 0 0 3px rgba(255,255,255,.07);
+  }
+  .mt-creator h3{font-size:15px;margin-bottom:4px}
+  .mt-creator-role{font-size:11.5px;color:var(--mt-cyan);letter-spacing:.5px;margin-bottom:9px}
+  .mt-creator p{font-size:12px;color:var(--mt-sub);line-height:1.6;min-height:56px}
+  .mt-creator-data{display:flex;justify-content:center;gap:16px;margin-top:10px;border-top:1px dashed var(--mt-line);padding-top:10px}
+  .mt-creator-data b{display:block;font-size:14px;color:var(--mt-pink2)}
+  .mt-creator-data span{font-size:10.5px;color:var(--mt-sub)}
+
+  /* ========== 影像墙 ========== */
+  .mt-wall{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .mt-wall-item{
+    position:relative;border-radius:12px;overflow:hidden;
+    border:1px solid var(--mt-line);background:#101014;
+  }
+  .mt-wall-item img{width:100%;height:100%;object-fit:cover;transition:.4s}
+  .mt-wall-item:hover img{transform:scale(1.06)}
+  .mt-wall-item span{
+    position:absolute;left:0;right:0;bottom:0;z-index:2;
+    padding:22px 10px 8px;font-size:11.5px;color:#e9e9ef;
+    background:linear-gradient(to top,rgba(10,10,14,.88),transparent);
+  }
+  .mt-wall-lg{grid-column:span 3;aspect-ratio:16/10}
+  .mt-wall-md{grid-column:span 2;aspect-ratio:4/3}
+  .mt-wall-sm{grid-column:span 1;aspect-ratio:1/1}
+  .mt-wall-grid{grid-column:span 3;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+  /* ========== 评价 / 评论 ========== */
+  .mt-review-masonry{columns:3;column-gap:18px}
+  .mt-review{
+    break-inside:avoid;margin-bottom:18px;background:var(--mt-card);
+    border:1px solid var(--mt-line);border-radius:14px;padding:17px 18px;
+  }
+  .mt-review-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .mt-review-head b{font-size:13.5px}
+  .mt-review-head span{font-size:11px;color:var(--mt-sub)}
+  .mt-review-stars{margin-left:auto;color:var(--mt-amber);font-size:11.5px;letter-spacing:1px}
+  .mt-review p{font-size:13px;color:#c3c3d0;line-height:1.7}
+  .mt-review-foot{display:flex;gap:12px;margin-top:10px;font-size:11.5px;color:var(--mt-sub)}
+  .mt-review-foot button:hover{color:var(--mt-pink2)}
+
+  /* ========== 灵感 / 攻略 ========== */
+  .mt-inspire{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .mt-inspire-card{
+    background:linear-gradient(160deg,var(--mt-card),#15151b);
+    border:1px solid var(--mt-line);border-radius:var(--mt-radius);
+    padding:22px;transition:.26s;
+  }
+  .mt-inspire-card:hover{border-color:rgba(89,224,214,.55);transform:translateY(-3px)}
+  .mt-inspire-card .mt-tag{margin-bottom:12px}
+  .mt-inspire-card h3{font-size:16px;margin-bottom:8px}
+  .mt-inspire-card p{font-size:12.5px;color:var(--mt-sub);line-height:1.7}
+  .mt-inspire-card ul{margin-top:12px}
+  .mt-inspire-card li{font-size:12px;color:var(--mt-sub);padding:5px 0;border-bottom:1px dashed var(--mt-line);display:flex;gap:8px}
+  .mt-inspire-card li:last-child{border-bottom:none}
+  .mt-inspire-card li::before{content:"→";color:var(--mt-cyan);font-size:11px}
+
+  /* ========== 动态 / 榜单 ========== */
+  .mt-split{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:start}
+  .mt-news-list li{
+    display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--mt-line);
+  }
+  .mt-news-list li:last-child{border-bottom:none}
+  .mt-news-date{
+    flex:none;width:62px;text-align:center;padding:6px 0;
+    border:1px solid var(--mt-line);border-radius:10px;background:var(--mt-bg2);
+  }
+  .mt-news-date b{display:block;font-size:17px;color:var(--mt-pink2);line-height:1.2}
+  .mt-news-date span{font-size:10.5px;color:var(--mt-sub)}
+  .mt-news-body h3{font-size:14.5px;margin-bottom:4px}
+  .mt-news-body p{font-size:12.5px;color:var(--mt-sub)}
+
+  .mt-rank{background:var(--mt-card);border:1px solid var(--mt-line);border-radius:var(--mt-radius);padding:20px}
+  .mt-rank h3{font-size:15px;margin-bottom:14px}
+  .mt-rank li{display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px dashed var(--mt-line);font-size:13px}
+  .mt-rank li:last-child{border-bottom:none}
+  .mt-rank-no{
+    width:22px;height:22px;flex:none;border-radius:7px;background:var(--mt-bg2);
+    display:grid;place-items:center;font-size:11px;font-weight:700;color:var(--mt-sub);
+  }
+  .mt-rank li:nth-child(1) .mt-rank-no{background:var(--mt-pink);color:#101014}
+  .mt-rank li:nth-child(2) .mt-rank-no{background:var(--mt-amber);color:#101014}
+  .mt-rank li:nth-child(3) .mt-rank-no{background:var(--mt-cyan);color:#101014}
+  .mt-rank-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .mt-rank-heat{font-size:11.5px;color:var(--mt-pink2)}
+
+  /* ========== FAQ ========== */
+  .mt-faq{max-width:880px;margin:0 auto}
+  .mt-faq details{
+    background:var(--mt-card);border:1px solid var(--mt-line);
+    border-radius:12px;margin-bottom:12px;overflow:hidden;
+  }
+  .mt-faq summary{
+    list-style:none;cursor:pointer;padding:15px 45px 15px 18px;
+    font-size:14px;font-weight:600;position:relative;
+  }
+  .mt-faq summary::-webkit-details-marker{display:none}
+  .mt-faq summary::after{
+    content:"+";position:absolute;right:17px;top:50%;transform:translateY(-50%);
+    color:var(--mt-pink);font-size:19px;font-weight:400;transition:.25s;
+  }
+  .mt-faq details[open] summary::after{content:"–"}
+  .mt-faq details[open] summary{color:var(--mt-pink2)}
+  .mt-faq-answer{padding:0 18px 16px;font-size:13px;color:var(--mt-sub);line-height:1.75}
+
+  /* ========== 页脚 / 联系 ========== */
+  .mt-contact{
+    display:grid;grid-template-columns:1.4fr 1fr;gap:30px;align-items:center;
+    background:linear-gradient(140deg,rgba(255,92,138,.14),rgba(89,224,214,.1));
+    border:1px solid var(--mt-line);border-radius:22px;padding:36px;
+  }
+  .mt-contact h2{font-size:clamp(22px,3vw,30px);margin-bottom:10px}
+  .mt-contact p{font-size:13.5px;color:#c6c6d3;margin-bottom:18px}
+  .mt-contact-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .mt-contact-info{font-size:13px;color:var(--mt-sub);display:flex;flex-direction:column;gap:9px}
+  .mt-contact-info b{color:var(--mt-txt);font-size:15px}
+
+  .mt-footer{background:#0a0a0d;border-top:1px solid var(--mt-line);padding:44px 0 26px;margin-top:64px}
+  .mt-footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;margin-bottom:30px}
+  .mt-footer h4{font-size:13.5px;margin-bottom:13px;color:var(--mt-txt)}
+  .mt-footer li,.mt-footer p{font-size:12.5px;color:var(--mt-sub);line-height:2}
+  .mt-footer a:hover{color:var(--mt-pink2)}
+  .mt-footer-brand p{max-width:300px;line-height:1.8;margin-top:10px}
+  .mt-footer-bottom{
+    border-top:1px solid var(--mt-line);padding-top:20px;
+    display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:#6c6c7c;
+  }
+  .mt-footer-bottom span{margin-left:auto}
+
+  /* ========== 回到顶部 / Toast ========== */
+  .mt-backtop{
+    position:fixed;right:22px;bottom:22px;z-index:80;
+    width:44px;height:44px;border-radius:13px;
+    background:var(--mt-pink);color:#101014;font-size:19px;font-weight:800;
+    display:grid;place-items:center;box-shadow:0 10px 26px rgba(255,92,138,.4);
+    opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s;
+  }
+  .mt-backtop.is-show{opacity:1;visibility:visible;transform:none}
+  .mt-toast{
+    position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+    background:var(--mt-card);border:1px solid var(--mt-line);
+    color:var(--mt-txt);font-size:13px;padding:11px 20px;border-radius:11px;
+    box-shadow:var(--mt-shadow);z-index:120;opacity:0;pointer-events:none;transition:.3s;
+  }
+  .mt-toast.is-show{opacity:1;transform:translate(-50%,0)}
+
+  /* ========== 弹窗 ========== */
+  .mt-modal{
+    position:fixed;inset:0;z-index:140;display:none;
+    background:rgba(6,6,9,.78);backdrop-filter:blur(6px);
+    padding:24px;overflow-y:auto;
+  }
+  .mt-modal.is-open{display:flex;align-items:center;justify-content:center}
+  .mt-modal-box{
+    background:var(--mt-card);border:1px solid var(--mt-line);
+    border-radius:18px;max-width:520px;width:100%;padding:28px;position:relative;
+    box-shadow:var(--mt-shadow);animation:mt-pop .28s;
+  }
+  @keyframes mt-pop{from{opacity:0;transform:scale(.94) translateY(10px)}to{opacity:1;transform:none}}
+  .mt-modal-close{
+    position:absolute;top:13px;right:15px;font-size:21px;color:var(--mt-sub);line-height:1;
+  }
+  .mt-modal-close:hover{color:var(--mt-pink)}
+  .mt-modal-box h3{font-size:19px;margin-bottom:7px}
+  .mt-modal-box .mt-modal-sub{font-size:12.5px;color:var(--mt-sub);margin-bottom:18px}
+  .mt-field{margin-bottom:14px}
+  .mt-field label{display:block;font-size:12.5px;margin-bottom:6px;color:var(--mt-sub)}
+  .mt-field input,.mt-field textarea,.mt-field select{
+    width:100%;background:var(--mt-bg2);border:1px solid var(--mt-line);
+    border-radius:10px;padding:10px 12px;color:var(--mt-txt);
+    font-size:13px;outline:none;font-family:inherit;transition:.2s;
+  }
+  .mt-field input:focus,.mt-field textarea:focus,.mt-field select:focus{border-color:var(--mt-pink)}
+  .mt-field textarea{resize:vertical;min-height:92px}
+  .mt-modal-foot{display:flex;gap:10px;justify-content:flex-end;margin-top:6px}
+  .mt-share-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+  .mt-share-list button{
+    border:1px solid var(--mt-line);border-radius:11px;padding:12px;
+    font-size:13px;text-align:left;color:var(--mt-sub);transition:.2s;
+  }
+  .mt-share-list button:hover{border-color:var(--mt-pink);color:var(--mt-pink2)}
+
+  @media(max-width:1024px){
+    .mt-hero-grid{grid-template-columns:1fr;gap:32px}
+    .mt-hero-visual{max-width:440px}
+    .mt-about-grid{grid-template-columns:1fr}
+    .mt-about-card{position:static}
+    .mt-creators{grid-template-columns:repeat(2,1fr)}
+    .mt-flow{grid-template-columns:repeat(2,1fr)}
+    .mt-inspire{grid-template-columns:1fr}
+    .mt-review-masonry{columns:2}
+    .mt-split{grid-template-columns:1fr}
+    .mt-footer-grid{grid-template-columns:1fr 1fr}
+    .mt-contact{grid-template-columns:1fr}
+  }
+  @media(max-width:760px){
+    :root{--mt-sticky-h:100px}
+    .mt-nav,.mt-search{display:none}
+    .mt-burger{display:flex}
+    .mt-feature-grid{grid-template-columns:1fr}
+    .mt-flow{grid-template-columns:1fr}
+    .mt-creators{grid-template-columns:1fr 1fr}
+    .mt-review-masonry{columns:1}
+    .mt-wall{grid-template-columns:repeat(2,1fr)}
+    .mt-wall-lg,.mt-wall-md{grid-column:span 2}
+    .mt-wall-sm{grid-column:span 1}
+    .mt-wall-grid{grid-column:span 2}
+    .mt-footer-grid{grid-template-columns:1fr}
+    .mt-announce .mt-wrap{font-size:11.5px}
+    .mt-announce-link{display:none}
+    .mt-sec{padding:48px 0}
+    .mt-hero{padding:48px 0 40px}
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ===== 吸顶：公告条 + 页头 ===== -->
+<div class="mt-sticky-shell">
+  <div class="mt-announce">
+    <div class="mt-wrap">
+      <span class="mt-announce-dot"></span>
+      <span class="mt-announce-label">官方发布</span>
+      <span>「城市光影计划·冬季人像特辑」新增 12 组原创写真作品，报名通道同步开启</span>
+      <a class="mt-announce-link" href="#mt-updates">查看更新 →</a>
+    </div>
+  </div>
+
+  <header class="mt-header">
+    <div class="mt-wrap mt-header-inner">
+      <a class="mt-brand" href="#mt-top" aria-label="美图写真官网首页">
+        <span class="mt-brand-mark">美</span>
+        <span class="mt-brand-name">美图写真<small>MEITU PORTRAIT</small></span>
+      </a>
+      <nav class="mt-nav" aria-label="主导航">
+        <a href="#mt-top" class="is-active">首页</a>
+        <a href="#mt-featured">精选内容</a>
+        <a href="#mt-topics">专题企划</a>
+        <a href="#mt-creators">创作者</a>
+        <a href="#mt-wall">影像墙</a>
+        <a href="#mt-updates">企业动态</a>
+        <a href="#mt-faq">帮助</a>
+        <a href="#mt-contact">联系</a>
+      </nav>
+      <div class="mt-search" style="position:relative">
+        <input id="mtSearchInput" type="search" placeholder="搜索写真风格 / 创作者" aria-label="站内搜索">
+        <button id="mtSearchBtn" type="button">搜索</button>
+        <div class="mt-search-hint" id="mtSearchHint"></div>
+      </div>
+      <button class="mt-burger" id="mtBurger" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mt-mobile-panel" id="mtMobilePanel">
+      <a href="#mt-top">首页</a>
+      <a href="#mt-featured">精选内容</a>
+      <a href="#mt-topics">专题企划</a>
+      <a href="#mt-creators">创作者</a>
+      <a href="#mt-wall">影像墙</a>
+      <a href="#mt-updates">企业动态</a>
+      <a href="#mt-faq">帮助中心</a>
+      <a href="#mt-contact">联系我们</a>
+    </div>
+  </header>
+</div>
+
+<main id="mt-top">
+
+  <!-- ===== 首屏 ===== -->
+  <section class="mt-hero">
+    <div class="mt-wrap mt-hero-grid">
+      <div>
+        <span class="mt-hero-kicker">官方网站 · 品牌影像门户</span>
+        <h1>美图写真<em>光影</em>美学</h1>
+        <p class="mt-hero-slogan">以真实人物为原点，以光影为语言，打造值得信赖的原创写真影像平台。这里汇聚专业摄影师与企业级内容生态，记录每一个值得被看见的瞬间。</p>
+        <div class="mt-hero-actions">
+          <a class="mt-btn mt-btn-primary" href="#mt-featured">浏览精选作品</a>
+          <a class="mt-btn mt-btn-ghost" href="#mt-creators">认识创作者</a>
+          <button class="mt-btn mt-btn-ghost" id="mtHeroSubmit">投稿 / 报名</button>
+        </div>
+        <div class="mt-stats">
+          <div class="mt-stat"><b>3,860+</b><span>原创写真作品</span></div>
+          <div class="mt-stat"><b>268 位</b><span>签约创作者</span></div>
+          <div class="mt-stat"><b>52 万</b><span>社区摄影同好</span></div>
+        </div>
+      </div>
+      <div class="mt-hero-visual">
+        <div class="mt-hero-frame">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 750'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23241f2b'/%3E%3Cstop offset='1' stop-color='%23121018'/%3E%3C/linearGradient%3E%3CradialGradient id='halo' cx='.62' cy='.3' r='.55'%3E%3Cstop offset='0' stop-color='%23ff7fa4' stop-opacity='.85'/%3E%3Cstop offset='1' stop-color='%23ff7fa4' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='600' height='750' fill='url(%23bg)'/%3E%3Ccircle cx='372' cy='225' r='270' fill='url(%23halo)'/%3E%3Cpath d='M0 560 Q150 470 300 545 T600 520 V750 H0Z' fill='%231b1724'/%3E%3Cpath d='M0 640 Q180 575 330 640 T600 610 V750 H0Z' fill='%2315121b'/%3E%3Ccircle cx='300' cy='330' r='120' fill='%23ffd9c8' opacity='.9'/%3E%3Cpath d='M190 330 q110 -175 220 0 q-25 -130 -110 -130 q-85 0 -110 130Z' fill='%23312627'/%3E%3Ccircle cx='258' cy='325' r='11' fill='%23222028'/%3E%3Ccircle cx='342' cy='325' r='11' fill='%23222028'/%3E%3Cpath d='M272 378 q28 20 56 0' stroke='%23b8576f' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3Crect x='230' y='455' width='140' height='180' rx='64' fill='%23f4b8a5' opacity='.85'/%3E%3Ccircle cx='300' cy='330' r='120' fill='none' stroke='%2359e0d6' stroke-width='2' opacity='.5'/%3E%3C/svg%3E" alt="美图写真品牌主视觉：柔和光影中的人像轮廓插画">
+          <div class="mt-hero-badge">
+            <span class="mt-live-dot"></span>
+            <b>冬季人像特辑正在更新</b>
+            <span>每周三 · 官方发布</span>
+          </div>
+          <div class="mt-hero-chip"><b>98.6%</b>用户满意度口碑</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 关键词解析长文 ===== -->
+  <section class="mt-sec mt-sec-alt" id="mt-about">
+    <div class="mt-wrap">
+      <div class="mt-sec-head">
+        <span class="mt-eyebrow">About Us</span>
+        <h2 class="mt-sec-title">关于美图写真：影像品牌的定位与深度解析</h2>
+        <p class="mt-sec-desc">作为持续运营的写真影像品牌，我们以专业、原创与真实为底色，构建属于创作者与用户的内容生态。</p>
+      </div>
+
+      <div class="mt-about-grid">
+        <aside class="mt-about-card">
+          <h3>快速了解</h3>
+          <p>美图写真官方网站以人物影像为核心，长期深耕写真这一垂直领域。</p>
+          <ul class="mt-about-list">
+            <li>2016 年创立，持续运营 10 年</li>
+            <li>268 位签约创作者，覆盖 30+ 风格</li>
+            <li>累计 3,860+ 组原创写真作品</li>
+            <li>企业级内容审核与版权保护体系</li>
+            <li>官方发布 · 正版授权 · 高清呈现</li>
+          </ul>
+          <a class="mt-btn mt-btn-primary" href="#mt-contact" style="margin-top:16px;width:100%;justify-content:center">合作与品牌咨询</a>
+        </aside>
+
+        <div class="mt-prose">
+          <p><strong>美图写真</strong>是一个专注人物影像与写真美学的视频品牌，也是该垂直领域中持续深耕的内容平台。我们相信，一张写真承载的不只是构图与色彩，更是被拍摄者真实的情绪、状态与故事。因此，美图写真官方网站从创立之初，就把「真实」放在审美的前面——不刻意制造距离感，不用过度修图消解个人特征，而是让每一组作品都保留人物自身的呼吸感。这种理念让我们在写真爱好者与专业摄影师之间，形成了口碑相传的内容生态。</p>
+
+          <h3>一、品牌定位：专业写真影像的企业级门户</h3>
+          <p>在影像内容高度同质化的当下，美图写真选择以「品牌官网 + 社区共创」的双轨形态运营。一方面，官网承载企业级品牌信息：品牌故事、企业动态、合作案例、版权说明、投稿规范，为用户与合作伙伴提供可信赖的官方信息源；另一方面，平台聚合了大量创作者与摄影同好，通过作品发布、主题企划、比赛报名、投票互动等方式，持续产出精品内容。我们不是简单的图片聚合页，而是一个有秩序、有审美的影像内容生态。</p>
+          <p>从行业观察的角度看，写真领域长期存在「风格断层」的问题：商业影楼与个人创作之间缺乏过渡地带，新手创作者难以获得系统性的成长路径。美图写真正是在这一缝隙中建立价值——我们提供标准化的拍摄攻略、布光与调色思路、以及可复用的脚本灵感，降低创作门槛；同时以官方企划的形式，为优质创作者提供曝光位与正向激励，让「专业」不再是少数人的标签。</p>
+
+          <h3>二、内容生态：多元风格与包容表达</h3>
+          <p>美图写真的内容版图覆盖都市人像、胶片复古、自然户外、室内棚拍、亲子成长、艺术概念等多个方向。我们坚持多元与包容的审美主张：不把「白幼瘦」作为唯一标准，也不将某种风格奉为圭臬。每一种身材、每一种肤色、每一种情绪，都值得被认真记录。平台上的创作者来自不同城市与职业背景，有全职摄影师，也有利用周末创作的设计师、教师与自由职业者，他们的作品共同构成了美图写真丰富而真实的影像图谱。</p>
+          <p>为了保障内容品质，我们建立了编辑初筛、专业评审与用户反馈三重机制。每一组进入精选的写真作品，都需要通过画质、构图、叙事完整度与版权合规的检查。这套流程看似严格，实则是对创作者与用户的双重尊重——让真正用心的作品被看见，让每一次浏览都值得信赖。</p>
+
+          <h3>三、创作者成长：陪伴式的长期支持</h3>
+          <p>在美图写真，创作者被视作品牌最重要的资产。我们为签约创作者提供作品页、个人主页、数据看板与商业对接入口，并通过「创作训练营」「月度挑战赛」「主题共创」等运营活动，帮助创作者形成稳定的输出节奏。我们尤其重视陪伴与成长的关系：新人作品的第一次推荐、第一次被用户留言肯定、第一次登上热榜，都是平台与创作者共同经历的节点。这种长期主义，让美图写真在行业中获得「值得信赖」的评价。</p>
+          <p>与此同时，我们为创作者提供可下载的拍摄清单、调色预设说明与脚本模板，这些工具并非替代创作，而是把重复劳动交还给系统，把时间与灵感留给真正需要创造的部分。创新从来不是凭空发生，它需要一个足够友好的土壤。</p>
+
+          <h3>四、技术与社会责任：让影像更有力量</h3>
+          <p>美图写真官方网站采用高清自适应播放与图片压缩策略，在保证画质的同时降低浏览负担；版权方面，平台对每一组原创作品进行登记与存证，明确授权范围，避免二次传播带来的权益纠纷。我们也积极参与公益影像计划，为社区老人、残障人士与乡村儿童提供免费的人像记录服务，用影像传递温暖与力量。这既是企业社会责任的体现，也是品牌长期价值的根基。</p>
+          <p>未来，美图写真将继续围绕「原创、正版、高清、专业」打磨内容与工具，拓展合作品牌与线下场景，让写真从一张照片、一段视频，延伸为更完整的影像生活方式。我们希望，当用户提起写真内容平台时，美图写真会是那个被优先想到的名字——这不仅来自规模，更来自长期积累的信任与口碑。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 精选内容 ===== -->
+  <section class="mt-sec" id="mt-featured">
+    <div class="mt-wrap">
+      <div class="mt-sec-head">
+        <span class="mt-eyebrow">Featured</span>
+        <h2 class="mt-sec-title">焦点作品推荐</h2>
+        <p class="mt-sec-desc">由编辑团队从当周更新中挑选的精品内容，兼顾艺术表达与拍摄参考价值。</p>
+        <a class="mt-sec-more" href="#mt-flow">更多热门 →</a>
+      </div>
+
+      <div class="mt-feature-grid">
+        <article class="mt-feature-card">
+          <div class="mt-cover">
+            <span class="mt-cover-tag mt-tag">冬季特辑</span>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232b2334'/%3E%3Cstop offset='1' stop-color='%2313131a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23a)'/%3E%3Ccircle cx='470' cy='120' r='150' fill='%23ff8aae' opacity='.22'/%3E%3Ccircle cx='320' cy='205' r='72' fill='%23f6d2c2'/%3E%3Cpath d='M248 205 q72 -108 144 0 q-18 -84 -72 -84 q-54 0 -72 84Z' fill='%23392f33'/%3E%3Cpath d='M280 300 q40 52 80 0 l14 60 H266Z' fill='%23433845'/%3E%3Ccircle cx='298' cy='200' r='7' fill='%23222028'/%3E%3Ccircle cx='342' cy='200' r='7' fill='%23222028'/%3E%3Cpath d='M308 232 q12 10 24 0' stroke='%23b8576f' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Crect x='0' y='318' width='640' height='42' fill='%230f0f14' opacity='.6'/%3E%3C/svg%3E" alt="冬季暖调人像写真封面：柔和侧光中的女性肖像">
+            <span class="mt-play">▶</span>
+            <span class="mt-cover-dur">08:42</span>
+          </div>
+          <div class="mt-feature-body">
+            <h3>《雪落之前》——冬季暖调人像的布光与情绪引导</h3>
+            <p>从自然光的取舍到反光板的机位，完整拆解一组冬季写真的拍摄流程，包含 3 组可直接复用的情绪引导话术。</p>
+            <div class="mt-meta">
+              <span class="mt-avatar" style="background:#ff8aae">林</span>
+              <span>林小满</span>
+              <span>·</span><span>2.4 万次浏览</span>
+              <span>·</span><span>1 天前</span>
+            </div>
+            <div class="mt-card-actions">
+              <button class="mt-act" data-like>♡ 点赞 <span class="mt-num">1286</span></button>
+              <button class="mt-act" data-save>☆ 收藏</button>
+              <button class="mt-act mt-act-more" data-share>分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="mt-feature-card">
+          <div class="mt-cover">
+            <span class="mt-cover-tag mt-tag mt-tag-cyan">胶片实验</span>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='b' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23243a3a'/%3E%3Cstop offset='1' stop-color='%23141b1c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23b)'/%3E%3Crect x='60' y='70' width='200' height='230' rx='10' fill='%23e9dcc3' opacity='.16'/%3E%3Ccircle cx='360' cy='185' r='96' fill='%23d9b9a5'/%3E%3Cpath d='M264 185 q96 -150 192 0 q-24 -118 -96 -118 q-72 0 -96 118Z' fill='%232c2622'/%3E%3Ccircle cx='332' cy='178' r='9' fill='%23211d1a'/%3E%3Ccircle cx='388' cy='178' r='9' fill='%23211d1a'/%3E%3Ccircle cx='360' cy='215' r='7' fill='%23b8666a'/%3E%3Crect x='510' y='70' width='80' height='230' rx='8' fill='%2359e0d6' opacity='.2'/%3E%3Cpath d='M0 300 h640' stroke='%2359e0d6' stroke-width='2' opacity='.35'/%3E%3C/svg%3E" alt="胶片质感人像写真封面：青绿背景下的侧脸特写">
+            <span class="mt-play">▶</span>
+            <span class="mt-cover-dur">11:05</span>
+          </div>
+          <div class="mt-feature-body">
+            <h3>胶片感不是加滤镜：一次关于颗粒、色温与宽容度的实验</h3>
+            <p>用同一组拍摄素材，对比三款胶片模拟方案的输出差异，并给出数码相机还原胶片质感的具体参数区间。</p>
+            <div class="mt-meta">
+              <span class="mt-avatar" style="background:#59e0d6">陈</span>
+              <span>陈屿影像</span>
+              <span>·</span><span>3.1 万次浏览</span>
+              <span>·</span><span>3 天前</span>
+            </div>
+            <div class="mt-card-actions">
+              <button class="mt-act" data-like>♡ 点赞 <span class="mt-num">2048</span></button>
+              <button class="mt-act" data-save>☆ 收藏</button>
+              <button class="mt-act mt-act-more" data-share>分享</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 热门视频流 ===== -->
+  <section class="mt-sec mt-sec-alt" id="mt-flow">
+    <div class="mt-wrap">
+      <div class="mt-sec-head">
+        <span class="mt-eyebrow">Trending</span>
+        <h2 class="mt-sec-title">热门视频流</h2>
+        <p class="mt-sec-desc">来自社区的高热度写真内容，涵盖教程、测评与幕后记录。</p>
+      </div>
+      <div class="mt-flow">
+
+        <article class="mt-vcard">
+          <div class="mt-cover">
+            <span class="mt-cover-tag mt-tag mt-tag-amber">教程干货</span>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='c' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233a2f1e'/%3E%3Cstop offset='1' stop-color='%23171610'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23c)'/%3E%3Crect x='80' y='60' width='150' height='240' rx='8' fill='%23f7c948' opacity='.18'/%3E%3Ccircle cx='390' cy='180' r='84' fill='%23f0c9a8'/%3E%3Cpath d='M306 180 q84 -128 168 0 q-21 -100 -84 -100 q-63 0 -84 100Z' fill='%232d2419'/%3E%3Cpath d='M330 250 q60 40 120 0 l12 80 H318Z' fill='%23c98c4a' opacity='.8'/%3E%3Ccircle cx='368' cy='172' r='8' fill='%2324201a'/%3E%3Ccircle cx='412' cy='172' r='8' fill='%2324201a'/%3E%3Cpath d='M376 202 q14 10 28 0' stroke='%23a35f4a' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Crect x='470' y='90' width='110' height='170' rx='6' fill='%23ff8aae' opacity='.25'/%3E%3C/svg%3E" alt="暖色影棚布光教程封面：柔光箱前的人像">
+            <span class="mt-play">▶</span>
+            <span class="mt-cover-dur">06:18</span>
+          </div>
+          <div class="mt-vcard-body">
+            <h3>一盏柔光箱，如何拍出五种不同气质</h3>
+            <p>从机位、距离到眼神光控制，用最少的灯具完成从温柔到冷峻的风格切换。</p>
+            <div class="mt-vcard-foot">
+              <span class="mt-avatar" style="background:#f7c948">阿</span>
+              <span>阿吉的影棚</span>
+              <span class="mt-num">· 1.8 万</span>
+            </div>
+            <div class="mt-card-actions">
+              <button class="mt-act" data-like>♡ <span class="mt-num">864</span></button>
+              <button class="mt-act" data-save>☆ 收藏</button>
+              <button class="mt-act mt-act-more" data-comment>评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="mt-vcard">
+          <div class="mt-cover">
+            <span class="mt-cover-tag mt-tag-cyan">城市探索</span>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='d' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231b2b38'/%3E%3Cstop offset='1' stop-color='%230f1418'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23d)'/%3E%3Cg fill='%2359e0d6' opacity='.18'%3E%3Crect x='50' y='120' width='60' height='240'/%3E%3Crect x='130' y='70' width='80' height='290'/%3E%3Crect x='230' y='150' width='50' height='210'/%3E%3Crect x='470' y='90' width='70' height='270'/%3E%3Crect x='560' y='160' width='50' height='200'/%3E%3C/g%3E%3Ccircle cx='330' cy='150' r='56' fill='%23f2cdb8'/%3E%3Cpath d='M274 150 q56 -88 112 0 q-14 -68 -56 -68 q-42 0 -56 68Z' fill='%23262a2d'/%3E%3Cpath d='M300 300 q30 32 60 0 l8 60 H292Z' fill='%2334404a'/%3E%3Ccircle cx='316' cy='146' r='6' fill='%23211f22'/%3E%3Ccircle cx='344' cy='146' r='6' fill='%23211f22'/%3E%3Ccircle cx='330' cy='172' r='5' fill='%23a96a6c'/%3E%3Cpath d='M0 330 h640' stroke='%23ff8aae' stroke-width='2' opacity='.4'/%3E%3C/svg%3E" alt="城市夜景人像封面：霓虹背景与人物剪影">
+            <span class="mt-play">▶</span>
+            <span class="mt-cover-dur">14:27</span>
+          </div>
+          <div class="mt-vcard-body">
+            <h3>霓虹之下：城市夜景写真的色温与快门取舍</h3>
+            <p>在复杂的混合光源里找到人物的最佳机位，附三处适合夜拍的机位坐标与拍摄时段建议。</p>
+            <div class="mt-vcard-foot">
+              <span class="mt-avatar" style="background:#59e0d6">夜</span>
+              <span>夜行摄影社</span>
+              <span class="mt-num">· 2.6 万</span>
+            </div>
+            <div class="mt-card-actions">
+              <button class="mt-act" data-like>♡ <span class="mt-num">1522</span></button>
+              <button class="mt-act" data-save>☆ 收藏</button>
+              <button class="mt-act mt-act-more" data-comment>评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="mt-vcard">
+          <div class="mt-cover">
+            <span class="mt-cover-tag mt-tag">人物访谈</span>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='e' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232d2233'/%3E%3Cstop offset='1' stop-color='%23151219'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23e)'/%3E%3Ccircle cx='160' cy='180' r='96' fill='%23ff8aae' opacity='.22'/%3E%3Ccircle cx='420' cy='170' r='78' fill='%23e7c3ae'/%3E%3Cpath d='M342 170 q78 -120 156 0 q-20 -92 -78 -92 q-58 0 -78 92Z' fill='%232e2624'/%3E%3Cpath d='M366 250 q54 38 108 0 l10 72 H356Z' fill='%235a4350'/%3E%3Ccircle cx='398' cy='164' r='7' fill='%23221f1e'/%3E%3Ccircle cx='442' cy='164' r='7' fill='%23221f1e'/%3E%3Cpath d='M408 190 q12 9 24 0' stroke='%23a86a70' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Crect x='70' y='250' width='140' height='10' rx='5' fill='%23ff8aae' opacity='.5'/%3E%3Crect x='70' y='280' width='100' height='10' rx='5' fill='%2359e0d6' opacity='.4'/%3E%3C/svg%3E" alt="人物访谈视频封面：暖粉背景下的对谈人物">
+            <span class="mt-play">▶</span>
+            <span class="mt-cover-dur">22:10</span>
+          </div>
+          <div class="mt-vcard-body">
+            <h3>和一位拍了十二年的写真师聊「被拍的人」</h3>
+            <p>关于信任、关于如何让人放松下来，以及为什么好照片往往诞生在第 100 张之后。</p>
+            <div class="mt-vcard-foot">
+              <span class="mt-avatar" style="background:#ff8aae">纪</span>
+              <span>纪实频道</span>
+              <span class="mt-num">· 4.1 万</span>
+            </div>
+            <div class="mt-card-actions">
+              <button class="mt-act" data-like>♡ <span class="mt-num">3106</span></button>
+              <button class="mt-act" data-save>☆ 收藏</button>
+              <button class="mt-act mt-act-more" data-comment>评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="mt-vcard">
+          <div class="mt-cover">
+            <span class="mt-cover-tag mt-tag-amber">深度测评</span>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='f' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23282817'/%3E%3Cstop offset='1' stop-color='%23141310'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23f)'/%3E%3Crect x='90' y='80' width='170' height='180' rx='14' fill='%23f7c948' opacity='.16'/%3E%3Crect x='120' y='105' width='110' height='130' rx='10' fill='%23f7c948' opacity='.38'/%3E%3Ccircle cx='420' cy='175' r='80' fill='%23e6c0a9'/%3E%3Cpath d='M340 175 q80 -122 160 0 q-21 -94 -80 -94 q-59 0 -80 94Z' fill='%232d2820'/%3E%3Ccircle cx='396' cy='168' r='7' fill='%2322201c'/%3E%3Ccircle cx='444' cy='168' r='7' fill='%2322201c'/%3E%3Cpath d='M406 196 q14 10 28 0' stroke='%23a9705c' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Crect x='330' y='285' width='190' height='9' rx='4.5' fill='%23ff8aae' opacity='.55'/%3E%3Crect x='330' y='308' width='130' height='9' rx='4.5' fill='%2359e0d6' opacity='.4'/%3E%3C/svg%3E" alt="相机器材测评封面：镜头与人物并置构图">
+            <span class="mt-play">▶</span>
+            <span class="mt-cover-dur">09:53</span>
+          </div>
+          <div class="mt-vcard-body">
+            <h3>三支人像定焦镜头实拍对比：虚化之外的差异</h3>
+            <p>在相同布光与同一模特条件下，比较 35mm、50mm、85mm 的透视、压缩感与情绪表达。</p>
+            <div class="mt-vcard-foot">
+              <span class="mt-avatar" style="background:#f7c948">器</span>
+              <span>器材研究所</span>
+              <span class="mt-num">· 1.3 万</span>
+            </div>
+            <div class="mt-card-actions">
+              <button class="mt-act" data-like>♡ <span class="mt-num">612</span></button>
+              <button class="mt-act" data-save>☆ 收藏</button>
+              <button class="mt-act mt-act-more" data-comment>评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="mt-vcard">
+          <div class="mt-cover">
+            <span class="mt-cover-tag mt-tag-cyan">创作幕后</span>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231a2c2b'/%3E%3Cstop offset='1' stop-color='%230f1616'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23g)'/%3E%3Crect x='70' y='70' width='120' height='220' rx='8' fill='%2359e0d6' opacity='.14'/%3E%3Ccircle cx='400' cy='170' r='82' fill='%23ecc7b1'/%3E%3Cpath d='M318 170 q82 -124 164 0 q-22 -96 -82 -96 q-60 0 -82 96Z' fill='%23262c28'/%3E%3Ccircle cx='376' cy='164' r='7' fill='%23211f1d'/%3E%3Ccircle cx='424' cy='164' r='7' fill='%23211f1d'/%3E%3Cpath d='M386 192 q14 9 28 0' stroke='%23a8705d' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M120 330 h400' stroke='%23ff8aae' stroke-width='2' opacity='.3'/%3E%3Crect x='500' y='80' width='70' height='180' rx='6' fill='%23ff8aae' opacity='.18'/%3E%3C/svg%3E" alt="拍摄幕后花絮封面：影棚现场与人物侧影">
+            <span class="mt-play">▶</span>
+            <span class="mt-cover-dur">05:36</span>
+          </div>
+          <div class="mt-vcard-body">
+            <h3>一组概念写真的完整幕后：从草图到成片</h3>
+            <p>还原灵感板、服化道准备与现场调整的过程，看完你会明白好作品的偶然与必然。</p>
+            <div class="mt-vcard-foot">
+              <span class="mt-avatar" style="background:#59e0d6">幕</span>
+              <span>幕后手记</span>
+              <span class="mt-num">· 9,840</span>
+            </div>
+            <div class="mt-card-actions">
+              <button class="mt-act" data-like>♡ <span class="mt-num">503</span></button>
+              <button class="mt-act" data-save>☆ 收藏</button>
+              <button class="mt-act mt-act-more" data-comment>评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="mt-vcard">
+          <div class="mt-cover">
+            <span class="mt-cover-tag mt-tag">日常记录</span>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='h' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232c2130'/%3E%3Cstop offset='1' stop-color='%23151218'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23h)'/%3E%3Ccircle cx='320' cy='190' r='96' fill='%23f0cdb8'/%3E%3Cpath d='M224 190 q96 -146 192 0 q-26 -112 -96 -112 q-70 0 -96 112Z' fill='%2330282c'/%3E%3Ccircle cx='292' cy='182' r='9' fill='%23221f22'/%3E%3Ccircle cx='348' cy='182' r='9' fill='%23221f22'/%3E%3Cpath d='M304 216 q16 12 32 0' stroke='%23b06f78' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M264 300 q56 48 112 0 l12 60 H252Z' fill='%23433540'/%3E%3Ccircle cx='150' cy='100' r='38' fill='%23ff8aae' opacity='.25'/%3E%3Ccircle cx='500' cy='120' r='28' fill='%2359e0d6' opacity='.22'/%3E%3C/svg%3E" alt="日常生活记录封面：自然光下的人物半身像">
+            <span class="mt-play">▶</span>
+            <span class="mt-cover-dur">07:12</span>
+          </div>
+          <div class="mt-vcard-body">
+            <h3>把日常生活拍成写真：手机也能做到的 5 件事</h3>
+            <p>不依赖昂贵设备，从取景角度、光线时机到色彩统一切入，让日常记录更有影像质感。</p>
+            <div class="mt-vcard-foot">
+              <span class="mt-avatar" style="background:#ff8aae">日</span>
+              <span>日常装置</span>
+              <span class="mt-num">· 2.2 万</span>
+            </div>
+            <div class="mt-card-actions">
+              <button class="mt-act" data-like>♡ <span class="mt-num">1187</span></button>
+              <button class="mt-act" data-save>☆ 收藏</button>
+              <button class="mt-act mt-act-more" data-comment>评论</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 专题企划 ===== -->
+  <section class="mt-sec" id="mt-topics">
+    <div class="mt-wrap">
+      <div class="mt-sec-head">
+        <span class="mt-eyebrow">Series</span>
+        <h2 class="mt-sec-title">专题企划</h2>
+        <p class="mt-sec-desc">由官方发起的长期影像企划，覆盖不同主题与季节，欢迎创作者报名参与。</p>
+      </div>
+      <div class="mt-inspire">
+
+        <article class="mt-inspire-card">
+          <span class="mt-tag">进行中 · 报名开放</span>
+          <h3>城市光影计划 · 冬季人像特辑</h3>
+          <p>以城市为背景，记录冬日阳光下的普通人。企划提供统一拍摄攻略与色彩指导，入选作品将在品牌官网首页展示。</p>
+          <ul>
+            <li>报名截止：2026 年 12 月 20 日</li>
+            <li>已收到 386 组投稿作品</li>
+            <li>配套资源：外拍机位清单</li>
+          </ul>
+        </article>
+
+        <article class="mt-inspire-card">
+          <span class="mt-tag mt-tag-cyan">长期企划</span>
+          <h3>真实肖像：不修图的人像实验</h3>
+          <p>鼓励创作者保留皮肤质感与面部特征，用光影而不是后期来塑造人物。每月评选三组「真实表达奖」。</p>
+          <ul>
+            <li>已连续举办 18 期</li>
+            <li>累计 1,240 组作品参与</li>
+            <li>配套资源：自然光布光指南</li>
+          </ul>
+        </article>
+
+        <article class="mt-inspire-card">
+          <span class="mt-tag mt-tag-amber">预告 · 即将开启</span>
+          <h3>家庭影像档案 · 亲子成长记录</h3>
+          <p>以年度为单位记录一个家庭的成长变化，强调陪伴与温度。企划将提供拍摄时间轴模板，方便家庭长期留存。</p>
+          <ul>
+            <li>开放时间：2026 年 12 月 1 日</li>
+            <li>预计招募 100 组家庭</li>
+            <li>配套资源：成长记录脚本</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 创作者矩阵 ===== -->
+  <section class="mt-sec mt-sec-alt" id="mt-creators">
+    <div class="mt-wrap">
+      <div class="mt-sec-head">
+        <span class="mt-eyebrow">Creators</span>
+        <h2 class="mt-sec-title">创作者矩阵</h2>
+        <p class="mt-sec-desc">来自不同城市的摄影师与影像创作者，共同构成美图写真的内容生态。</p>
+      </div>
+      <div class="mt-creators">
+
+        <article class="mt-creator" data-creator="林小满">
+          <div class="mt-creator-ava" style="background:#ff8aae">林</div>
+          <h3>林小满</h3>
+          <div class="mt-creator-role">自然光人像 / 治愈系</div>
+          <p>擅长在傍晚与清晨捕捉柔和光线，作品色调温暖，关注人物松弛状态下的真实表情。</p>
+          <div class="mt-creator-data">
+            <div><b>186</b><span>作品</span></div>
+            <div><b>12.4万</b><span>关注</span></div>
+          </div>
+        </article>
+
+        <article class="mt-creator" data-creator="陈屿影像">
+          <div class="mt-creator-ava" style="background:#59e0d6">陈</div>
+          <h3>陈屿影像</h3>
+          <div class="mt-creator-role">胶片质感 / 实验影像</div>
+          <p>长期研究胶片色彩与颗粒的数字化还原，作品带有强烈的年代氛围与叙事感。</p>
+          <div class="mt-creator-data">
+            <div><b>243</b><span>作品</span></div>
+            <div><b>18.7万</b><span>关注</span></div>
+          </div>
+        </article>
+
+        <article class="mt-creator" data-creator="夜行摄影社">
+          <div class="mt-creator-ava" style="background:#6f7cff">夜</div>
+          <h3>夜行摄影社</h3>
+          <div class="mt-creator-role">城市夜景 / 街头人像</div>
+          <p>三人组成的创作小组，专注城市夜间人像，习惯用霓虹与招牌光作为主要光源。</p>
+          <div class="mt-creator-data">
+            <div><b>97</b><span>作品</span></div>
+            <div><b>9.1万</b><span>关注</span></div>
+          </div>
+        </article>
+
+        <article class="mt-creator" data-creator="阿吉的影棚">
+          <div class="mt-creator-ava" style="background:#f7c948">阿</div>
+          <h3>阿吉的影棚</h3>
+          <div class="mt-creator-role">棚拍布光 / 教程向</div>
+          <p>十年商业摄影经验，乐于拆解布光方案，教程讲得细、能落地，是新手常用的参考作者。</p>
+          <div class="mt-creator-data">
+            <div><b>152</b><span>作品</span></div>
+            <div><b>15.3万</b><span>关注</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 影像墙 ===== -->
+  <section class="mt-sec" id="mt-wall">
+    <div class="mt-wrap">
+      <div class="mt-sec-head">
+        <span class="mt-eyebrow">Gallery</span>
+        <h2 class="mt-sec-title">用户影像墙</h2>
+        <p class="mt-sec-desc">来自社区创作者的上传作品，经授权展示，风格多元、持续更新。</p>
+        <button class="mt-sec-more" id="mtUploadBtn" style="background:none;cursor:pointer">上传作品 →</button>
+      </div>
+
+      <div class="mt-wall">
+        <div class="mt-wall-item mt-wall-lg">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400'%3E%3Cdefs%3E%3ClinearGradient id='w1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232d2030'/%3E%3Cstop offset='1' stop-color='%23131116'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='400' fill='url(%23w1)'/%3E%3Ccircle cx='420' cy='180' r='110' fill='%23ff8aae' opacity='.18'/%3E%3Ccircle cx='320' cy='200' r='78' fill='%23eec9b4'/%3E%3Cpath d='M242 200 q78 -118 156 0 q-21 -92 -78 -92 q-57 0 -78 92Z' fill='%2330282c'/%3E%3Ccircle cx='296' cy='192' r='8' fill='%23221f22'/%3E%3Ccircle cx='344' cy='192' r='8' fill='%23221f22'/%3E%3Cpath d='M306 224 q14 10 28 0' stroke='%23b06f78' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M0 340 h640' stroke='%2359e0d6' stroke-width='2' opacity='.3'/%3E%3C/svg%3E" alt="影像墙作品：暖粉背景中的女性人像写真">
+          <span>《午后的三十分钟》· 林小满</span>
+        </div>
+        <div class="mt-wall-grid">
+          <div class="mt-wall-item mt-wall-sm">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='w2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23203a37'/%3E%3Cstop offset='1' stop-color='%23101413'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23w2)'/%3E%3Ccircle cx='200' cy='195' r='74' fill='%23e5c8ae'/%3E%3Cpath d='M126 195 q74 -112 148 0 q-20 -88 -74 -88 q-54 0 -74 88Z' fill='%23252f2b'/%3E%3Ccircle cx='176' cy='188' r='7' fill='%23211f1e'/%3E%3Ccircle cx='224' cy='188' r='7' fill='%23211f1e'/%3E%3Ccircle cx='200' cy='216' r='6' fill='%239c6d62'/%3E%3Crect x='0' y='340' width='400' height='60' fill='%2359e0d6' opacity='.1'/%3E%3C/svg%3E" alt="影像墙作品：青绿调棚拍人像特写">
+            <span>《青绿》· 陈屿影像</span>
+          </div>
+          <div class="mt-wall-item mt-wall-sm">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='w3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23332a1c'/%3E%3Cstop offset='1' stop-color='%2315120e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23w3)'/%3E%3Ccircle cx='200' cy='190' r='70' fill='%23f0c9a8'/%3E%3Cpath d='M130 190 q70 -108 140 0 q-19 -84 -70 -84 q-51 0 -70 84Z' fill='%23332a20'/%3E%3Ccircle cx='178' cy='184' r='7' fill='%23221f1a'/%3E%3Ccircle cx='222' cy='184' r='7' fill='%23221f1a'/%3E%3Cpath d='M186 210 q14 9 28 0' stroke='%23a4715c' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Crect x='50' y='60' width='90' height='90' rx='8' fill='%23f7c948' opacity='.2'/%3E%3C/svg%3E" alt="影像墙作品：暖调室内人像侧脸">
+            <span>《旧相框》· 阿吉的影棚</span>
+          </div>
+        </div>
+        <div class="mt-wall-item mt-wall-md">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 375'%3E%3Cdefs%3E%3ClinearGradient id='w4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231f2733'/%3E%3Cstop offset='1' stop-color='%23101418'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='500' height='375' fill='url(%23w4)'/%3E%3Crect x='40' y='60' width='80' height='315' fill='%2359e0d6' opacity='.12'/%3E%3Crect x='380' y='90' width='70' height='285' fill='%23ff8aae' opacity='.12'/%3E%3Ccircle cx='250' cy='175' r='64' fill='%23e9c6af'/%3E%3Cpath d='M186 175 q64 -98 128 0 q-17 -76 -64 -76 q-47 0 -64 76Z' fill='%23262c30'/%3E%3Ccircle cx='228' cy='170' r='6' fill='%23211f1e'/%3E%3Ccircle cx='272' cy='170' r='6' fill='%23211f1e'/%3E%3Cpath d='M236 194 q14 9 28 0' stroke='%23a06a60' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M0 330 h500' stroke='%23ff8aae' stroke-width='2' opacity='.35'/%3E%3C/svg%3E" alt="影像墙作品：城市蓝调夜景人像">
+          <span>《霓虹来信》· 夜行摄影社</span>
+        </div>
+        <div class="mt-wall-item mt-wall-sm">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='w5' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23301f2c'/%3E%3Cstop offset='1' stop-color='%23141116'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23w5)'/%3E%3Ccircle cx='200' cy='195' r='70' fill='%23eec7b1'/%3E%3Cpath d='M130 195 q70 -106 140 0 q-19 -84 -70 -84 q-51 0 -70 84Z' fill='%232e2529'/%3E%3Ccircle cx='178' cy='189' r='7' fill='%23221f22'/%3E%3Ccircle cx='222' cy='189' r='7' fill='%23221f22'/%3E%3Ccircle cx='200' cy='214' r='5' fill='%23a86e78'/%3E%3Ccircle cx='320' cy='90' r='42' fill='%23ff8aae' opacity='.22'/%3E%3C/svg%3E" alt="影像墙作品：柔粉背景中的安静肖像">
+            <span>《呼吸感》· 日常装置</span>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 用户评价 ===== -->
+  <section class="mt-sec mt-sec-alt" id="mt-reviews">
+    <div class="mt-wrap">
+      <div class="mt-sec-head">
+        <span class="mt-eyebrow">Voices</span>
+        <h2 class="mt-sec-title">用户与创作者的共同评价</h2>
+        <p class="mt-sec-desc">来自不同身份的反馈，帮助我们持续打磨内容与体验。</p>
+      </div>
+      <div class="mt-review-masonry">
+
+        <article class="mt-review">
+          <div class="mt-review-head">
+            <span class="mt-avatar" style="background:#ff8aae">阿</span>
+            <b>阿…柚</b><span>摄影爱好者</span>
+            <span class="mt-review-stars">★★★★★</span>
+          </div>
+          <p>跟着站里的布光教程拍了一整年，从完全不会用反光板到现在能独立完成一组棚拍。最打动我的是教程里会讲「为什么」，而不是只给参数。</p>
+          <div class="mt-review-foot"><span>3 天前</span><button data-like>♡ 42</button></div>
+        </article>
+
+        <article class="mt-review">
+          <div class="mt-review-head">
+            <span class="mt-avatar" style="background:#59e0d6">未</span>
+            <b>未命名岛屿</b><span>签约创作者</span>
+            <span class="mt-review-stars">★★★★★</span>
+          </div>
+          <p>作为创作者，我最看重的是作品有没有被认真对待。这里的编辑会给具体的反馈意见，而不是一句「不符合调性」就结束。这种陪伴感很难得。</p>
+          <div class="mt-review-foot"><span>5 天前</span><button data-like>♡ 87</button></div>
+        </article>
+
+        <article class="mt-review">
+          <div class="mt-review-head">
+            <span class="mt-avatar" style="background:#f7c948">温</span>
+            <b>温同学</b><span>大学生</span>
+            <span class="mt-review-stars">★★★★☆</span>
+          </div>
+          <p>页面看着很舒服，作品质量整体在线。想要某个风格的参考时，直接搜标签就能找到一批，节省了很多时间。希望以后能加个作品合集的功能。</p>
+          <div class="mt-review-foot"><span>1 周前</span><button data-like>♡ 29</button></div>
+        </article>
+
+        <article class="mt-review">
+          <div class="mt-review-head">
+            <span class="mt-avatar" style="background:#6f7cff">李</span>
+            <b>李师傅的相机</b><span>器材博主</span>
+            <span class="mt-review-stars">★★★★★</span>
+          </div>
+          <p>测评内容很克制，不吹参数，而是讲实际拍摄中的差异在哪。上次那期三支定焦的对比，我推荐给了好几个刚入行的朋友。</p>
+          <div class="mt-review-foot"><span>2 周前</span><button data-like>♡ 63</button></div>
+        </article>
+
+        <article class="mt-review">
+          <div class="mt-review-head">
+            <span class="mt-avatar" style="background:#ff8aae">Y</span>
+            <b>Yuna_拍摄中</b><span>自由摄影师</span>
+            <span class="mt-review-stars">★★★★☆</span>
+          </div>
+          <p>城市光影计划让我第一次认真拍了夜里的街道。企划给的机位清单挺实用，就是有些点人比较多，建议错峰去。</p>
+          <div class="mt-review-foot"><span>2 周前</span><button data-like>♡ 51</button></div>
+        </article>
+
+        <article class="mt-review">
+          <div class="mt-review-head">
+            <span class="mt-avatar" style="background:#59e0d6">小</span>
+            <b>小满的邻居</b><span>普通用户</span>
+            <span class="mt-review-stars">★★★★★</span>
+          </div>
+          <p>不太懂摄影，但就是喜欢看。这里的写真不吓人、不做作，能看到很多普通人的样子，这点挺珍贵的。</p>
+          <div class="mt-review-foot"><span>3 周前</span><button data-like>♡ 38</button></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 创作灵感 + 动态榜单 ===== -->
+  <section class="mt-sec" id="mt-updates">
+    <div class="mt-wrap">
+      <div class="mt-sec-head">
+        <span class="mt-eyebrow">Inspiration &amp; News</span>
+        <h2 class="mt-sec-title">创作灵感与企业动态</h2>
+        <p class="mt-sec-desc">脚本灵感、剪辑思路与官方更新，帮助创作者稳定输出。</p>
+      </div>
+
+      <div class="mt-split">
+        <div>
+          <div class="mt-inspire" style="grid-template-columns:1fr 1fr;margin-bottom:28px">
+            <article class="mt-inspire-card">
+              <span class="mt-tag">脚本灵感</span>
+              <h3>三个适合冬季的人像叙事结构</h3>
+              <p>从「等待」「重逢」「独处」出发，把单张照片串成有节奏的小故事。</p>
+              <ul>
+                <li>开场：环境空镜 + 人物背影</li>
+                <li>转折：手部特写与眼神交互</li>
+                <li>收束：逆光半身像留白</li>
+              </ul>
+            </article>
+            <article class="mt-inspire-card">
+              <span class="mt-tag mt-tag-cyan">剪辑思路</span>
+              <h3>让写真视频更有呼吸感的节奏</h3>
+              <p>减少快切，用长镜头与静态构图建立情绪，再在关键点做一次节奏变化。</p>
+              <ul>
+                <li>平均镜头时长控制在 4 秒以上</li>
+                <li>音乐重音处安排表情特写</li>
+                <li>片尾留 2 秒环境声</li>
+              </ul>
+            </article>
+          </div>
+
+          <h3 style="font-size:17px;margin-bottom:6px">企业动态 · 官方发布</h3>
+          <ul class="mt-news-list">
+            <li>
+              <span class="mt-news-date"><b>18</b><span>11月</span></span>
+              <div class="mt-news-body">
+                <h3>冬季人像特辑报名通道现已开放</h3>
+                <p>面向所有创作者与摄影爱好者，投稿即可获得官方流量推荐与专业评审反馈。</p>
+              </div>
+            </li>
+            <li>
+              <span class="mt-news-date"><b>12</b><span>11月</span></span>
+              <div class="mt-news-body">
+                <h3>品牌版权保护计划升级，新增作品存证服务</h3>
+                <p>所有上传作品将获得时间戳存证，进一步保障原创作者的合法权益。</p>
+              </div>
+            </li>
+            <li>
+              <span class="mt-news-date"><b>05</b><span>11月</span></span>
+              <div class="mt-news-body">
+                <h3>美图写真与三家影像器材品牌达成内容合作</h3>
+                <p>后续将联合推出器材测评与线下体验活动，为社区用户提供更多实践机会。</p>
+              </div>
+            </li>
+            <li>
+              <span class="mt-news-date"><b>28</b><span>10月</span></span>
+              <div class="mt-news-body">
+                <h3>「真实肖像」企划第 18 期评选结果公布</h3>
+                <p>三组作品获得本月真实表达奖，作品页已同步上线，可前往专题查看。</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="mt-rank">
+          <h3>本周热度榜 · 创作者</h3>
+          <ul>
+            <li><span class="mt-rank-no">1</span><span class="mt-rank-name">陈屿影像</span><span class="mt-rank-heat">98.2 热度</span></li>
+            <li><span class="mt-rank-no">2</span><span class="mt-rank-name">林小满</span><span class="mt-rank-heat">94.6 热度</span></li>
+            <li><span class="mt-rank-no">3</span><span class="mt-rank-name">阿吉的影棚</span><span class="mt-rank-heat">90.1 热度</span></li>
+            <li><span class="mt-rank-no">4</span><span class="mt-rank-name">夜行摄影社</span><span class="mt-rank-heat">86.7 热度</span></li>
+            <li><span class="mt-rank-no">5</span><span class="mt-rank-name">日常装置</span><span class="mt-rank-heat">82.3 热度</span></li>
+            <li><span class="mt-rank-no">6</span><span class="mt-rank-name">幕后手记</span><span class="mt-rank-heat">79.8 热度</span></li>
+          </ul>
+          <div style="margin-top:16px;font-size:12px;color:var(--mt-sub);line-height:1.7">榜单根据作品浏览、互动与评审得分综合计算，每周一更新。</div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="mt-sec mt-sec-alt" id="mt-faq">
+    <div class="mt-wrap">
+      <div class="mt-sec-head" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
+        <span class="mt-eyebrow">FAQ</span>
+        <h2 class="mt-sec-title">常见问题</h2>
+        <p class="mt-sec-desc">关于投稿、版权与内容规范，这里有你需要的答案。</p>
+      </div>
+      <div class="mt-faq">
+        <details open>
+          <summary>如何向美图写真投稿作品？</summary>
+          <div class="mt-faq-answer">注册并完善创作者资料后，可通过页面上的「投稿 / 报名」入口提交作品。我们建议每次提交 6–12 张成组作品，并附上简短的拍摄说明。编辑会在 5 个工作日内完成初筛，通过后作品将进入精选池。</div>
+        </details>
+        <details>
+          <summary>投稿作品需要满足哪些基本要求？</summary>
+          <div class="mt-faq-answer">作品需为原创或已获得完整授权，画面清晰、无第三方平台水印，并符合相关法律法规与社区规范。涉及他人肖像的，需确保已获得被拍摄者的同意。</div>
+        </details>
+        <details>
+          <summary>平台如何保护我的作品版权？</summary>
+          <div class="mt-faq-answer">我们对上传作品进行时间戳存证，并在作品页注明作者与授权范围。未经作者许可，任何机构不得将作品用于商业用途。如发现侵权行为，可通过联系页面提交凭证，我们会协助处理。</div>
+        </details>
+        <details>
+          <summary>我没有专业设备，可以参与企划吗？</summary>
+          <div class="mt-faq-answer">可以。美图写真更看重表达与叙事，而不是器材参数。我们的教程与攻略中有大量手机拍摄的内容，历次企划中也有不少手机作品入选精选。</div>
+        </details>
+        <details>
+          <summary>专题企划的报名是否有费用？</summary>
+          <div class="mt-faq-answer">官方发起的专题企划不收取报名费用。部分线下联合活动如涉及场地或器材成本，会提前明确标注费用构成，由参与者自愿选择。</div>
+        </details>
+        <details>
+          <summary>如何成为签约创作者？</summary>
+          <div class="mt-faq-answer">平台会定期从精选作品中邀请活跃创作者加入签约计划。签约后可获得更高曝光、商业合作对接与官方培训资源。你也可以通过联系页面主动提交合作意向。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 联系 ===== -->
+  <section class="mt-sec" id="mt-contact">
+    <div class="mt-wrap">
+      <div class="mt-contact">
+        <div>
+          <span class="mt-eyebrow">Contact &amp; Submit</span>
+          <h2>与美图写真一起，记录真实的光</h2>
+          <p>无论你是创作者、品牌方还是影像爱好者，欢迎与我们建立联系。投稿、合作、活动报名与内容建议，都可以通过以下方式触达官方团队。</p>
+          <div class="mt-contact-actions">
+            <button class="mt-btn mt-btn-primary" id="mtContactSubmit">在线投稿</button>
+            <button class="mt-btn mt-btn-ghost" id="mtContactShare">分享官网</button>
+          </div>
+        </div>
+        <div class="mt-contact-info">
+          <div>品牌合作邮箱<br><b>brand@meitu-portrait.example</b></div>
+          <div>投稿与活动咨询<br><b>creator@meitu-portrait.example</b></div>
+          <div>官方社区运营时间<br><b>工作日 10:00 – 19:00</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== 页脚 ===== -->
+<footer class="mt-footer">
+  <div class="mt-wrap">
+    <div class="mt-footer-grid">
+      <div class="mt-footer-brand">
+        <div class="mt-brand">
+          <span class="mt-brand-mark">美</span>
+          <span class="mt-brand-name">美图写真<small>MEITU PORTRAIT</small></span>
+        </div>
+        <p>美图写真官方网站，专注高品质原创写真影像的企业级内容平台。我们深耕人像摄影垂直领域，以真实、专业与持续创新构建值得信赖的内容生态。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#mt-featured">精选作品</a></li>
+          <li><a href="#mt-flow">热门视频</a></li>
+          <li><a href="#mt-topics">专题企划</a></li>
+          <li><a href="#mt-wall">影像墙</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>社区</h4>
+        <ul>
+          <li><a href="#mt-creators">创作者矩阵</a></li>
+          <li><a href="#mt-reviews">用户评价</a></li>
+          <li><a href="#mt-updates">企业动态</a></li>
+          <li><a href="#mt-faq">帮助中心</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#mt-about">品牌故事</a></li>
+          <li><a href="#mt-contact">合作联系</a></li>
+          <li><a href="#mt-contact">投稿入口</a></li>
+          <li><a href="#mt-faq">版权说明</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-footer-bottom">
+      <span>© 2016–2026 美图写真 官方网站 · 版权所有 · 持续运营中</span>
+      <span>品牌备案号：MEITU-PORTRAIT-2026 · 内容合规与版权保护</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 回到顶部 -->
+<button class="mt-backtop" id="mtBackTop" aria-label="回到顶部">↑</button>
+
+<!-- Toast -->
+<div class="mt-toast" id="mtToast" role="status" aria-live="polite"></div>
+
+<!-- 通用弹窗：投稿 / 分享 / 评论 / 作者 -->
+<div class="mt-modal" id="mtModal" role="dialog" aria-modal="true" aria-label="操作弹窗">
+  <div class="mt-modal-box">
+    <button class="mt-modal-close" id="mtModalClose" aria-label="关闭弹窗">×</button>
+    <div id="mtModalContent"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('mtBurger');
+  var mobilePanel = document.getElementById('mtMobilePanel');
+  if(burger && mobilePanel){
+    burger.addEventListener('click', function(){
+      var open = mobilePanel.classList.toggle('is-open');
+      burger.classList.toggle('is-open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mobilePanel.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        mobilePanel.classList.remove('is-open');
+        burger.classList.remove('is-open');
+        burger.setAttribute('aria-expanded','false');
+      });
+    });
+  }
+
+  /* ---------- Toast ---------- */
+  var toastEl = document.getElementById('mtToast');
+  var toastTimer = null;
+  function toast(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('is-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      toastEl.classList.remove('is-show');
+    }, 2200);
+  }
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchInput = document.getElementById('mtSearchInput');
+  var searchBtn = document.getElementById('mtSearchBtn');
+  var searchHint = document.getElementById('mtSearchHint');
+  var keywords = ['冬季人像','胶片质感','城市夜景','布光教程','真实肖像','亲子成长','自然光','棚拍','黑白肖像','户外写真','复古色调','情绪引导'];
+  function doSearch(){
+    var val = (searchInput.value || '').trim();
+    if(!val){
+      if(searchHint){
+        searchHint.textContent = '试试输入：冬季人像 / 胶片质感 / 城市夜景';
+        searchHint.classList.add('is-show');
+      }
+      return;
+    }
+    var hit = keywords.filter(function(k){ return k.indexOf(val) > -1 || val.indexOf(k) > -1; });
+    if(searchHint){
+      searchHint.textContent = hit.length
+        ? '匹配到 ' + hit.length + ' 个相关标签：' + hit.join('、')
+        : '暂无完全匹配，推荐浏览「冬季人像」与「城市夜景」';
+      searchHint.classList.add('is-show');
+    }
+    toast('已按「' + val + '」检索相关内容');
+  }
+  if(searchBtn) searchBtn.addEventListener('click', doSearch);
+  if(searchInput){
+    searchInput.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+    });
+    searchInput.addEventListener('input', function(){
+      if(searchHint) searchHint.classList.remove('is-show');
+    });
+  }
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.querySelectorAll('[data-like]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var numEl = btn.querySelector('.mt-num');
+      var base = parseInt((btn.getAttribute('data-base') || (numEl ? numEl.textContent : '0')), 10) || 0;
+      if(!btn.hasAttribute('data-base')) btn.setAttribute('data-base', base);
+      var liked = btn.classList.toggle('is-liked');
+      var next = liked ? base + 1 : base;
+      if(numEl) numEl.textContent = next;
+      toast(liked ? '已点赞，感谢你的喜欢' : '已取消点赞');
+    });
+  });
+
+  document.querySelectorAll('[data-save]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var saved = btn.classList.toggle('is-saved');
+      btn.textContent = saved ? '♥ 已收藏' : '☆ 收藏';
+      toast(saved ? '已收藏到个人影像夹' : '已取消收藏');
+    });
+  });
+
+  /* ---------- 弹窗基础 ---------- */
+  var modal = document.getElementById('mtModal');
+  var modalContent = document.getElementById('mtModalContent');
+  var modalClose = document.getElementById('mtModalClose');
+  function openModal(html){
+    if(!modal || !modalContent) return;
+    modalContent.innerHTML = html;
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    if(!modal) return;
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  if(modalClose) modalClose.addEventListener('click', closeModal);
+  if(modal){
+    modal.addEventListener('click', function(e){
+      if(e.target === modal) closeModal();
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeModal();
+  });
+
+  /* ---------- 评论弹窗 ---------- */
+  document.querySelectorAll('[data-comment]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      openModal(
+        '<h3>评论这组作品</h3>' +
+        '<p class="mt-modal-sub">友善交流，尊重每一位创作者的表达。</p>' +
+        '<div class="mt-field"><label for="mtCommentText">你的评论</label>' +
+        '<textarea id="mtCommentText" placeholder="说说这组作品打动你的地方…"></textarea></div>' +
+        '<div class="mt-modal-foot">' +
+        '<button class="mt-btn mt-btn-ghost" data-close-modal>取消</button>' +
+        '<button class="mt-btn mt-btn-primary" id="mtCommentSend">发布评论</button>' +
+        '</div>'
+      );
+      var send = document.getElementById('mtCommentSend');
+      if(send){
+        send.addEventListener('click', function(){
+          var txt = document.getElementById('mtCommentText');
+          if(!txt || !txt.value.trim()){ toast('请先写下你的评论'); return; }
+          closeModal();
+          toast('评论已提交，审核通过后展示');
+        });
+      }
+      bindCloseButtons();
+    });
+  });
+
+  function bindCloseButtons(){
+    document.querySelectorAll('[data-close-modal]').forEach(function(b){
+      b.addEventListener('click', closeModal);
+    });
+  }
+
+  /* ---------- 分享弹窗 ---------- */
+  function openShare(){
+    openModal(
+      '<h3>分享美图写真</h3>' +
+      '<p class="mt-modal-sub">把喜欢的影像与品牌官网，分享给同样热爱写真的朋友。</p>' +
+      '<div class="mt-share-list">' +
+      '<button data-share-channel="微信">微信好友</button>' +
+      '<button data-share-channel="微博">微博</button>' +
+      '<button data-share-channel="QQ">QQ</button>' +
+      '<button data-share-channel="链接">复制链接</button>' +
+      '</div>'
+    );
+    document.querySelectorAll('[data-share-channel]').forEach(function(b){
+      b.addEventListener('click', function(){
+        var ch = b.getAttribute('data-share-channel');
+        if(ch === '链接'){
+          copyLink();
+          closeModal();
+        }else{
+          closeModal();
+          toast('已生成' + ch + '分享内容，请前往对应应用粘贴');
+        }
+      });
+    });
+  }
+  document.querySelectorAll('[data-share]').forEach(function(b){
+    b.addEventListener('click', function(e){ e.preventDefault(); openShare(); });
+  });
+
+  function copyLink(){
+    var url = 'https://meitu-portrait.example/';
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){
+        toast('官网链接已复制到剪贴板');
+      }).catch(function(){
+        toast('复制失败，请手动复制官网地址');
+      });
+    }else{
+      toast('当前环境不支持自动复制，请手动复制官网地址');
+    }
+  }
+
+  /* ---------- 投稿弹窗 ---------- */
+  function openSubmit(){
+    openModal(
+      '<h3>投稿 / 报名</h3>' +
+      '<p class="mt-modal-sub">填写基本信息，官方编辑将在 5 个工作日内与你联系。</p>' +
+      '<div class="mt-field"><label for="mtSubmitName">你的昵称</label>' +
+      '<input id="mtSubmitName" type="text" placeholder="如：林小满"></div>' +
+      '<div class="mt-field"><label for="mtSubmitStyle">投稿方向</label>' +
+      '<select id="mtSubmitStyle">' +
+      '<option>冬季人像特辑</option>' +
+      '<option>真实肖像企划</option>' +
+      '<option>城市光影计划</option>' +
+      '<option>其他原创作品</option>' +
+      '</select></div>' +
+      '<div class="mt-field"><label for="mtSubmitIntro">作品简介</label>' +
+      '<textarea id="mtSubmitIntro" placeholder="简单描述你的拍摄思路与作品构成…"></textarea></div>' +
+      '<div class="mt-modal-foot">' +
+      '<button class="mt-btn mt-btn-ghost" data-close-modal>取消</button>' +
+      '<button class="mt-btn mt-btn-primary" id="mtSubmitSend">提交意向</button>' +
+      '</div>'
+    );
+    var send = document.getElementById('mtSubmitSend');
+    if(send){
+      send.addEventListener('click', function(){
+        var name = document.getElementById('mtSubmitName');
+        var intro = document.getElementById('mtSubmitIntro');
+        if(!name || !name.value.trim()){ toast('请填写你的昵称'); return; }
+        if(!intro || !intro.value.trim()){ toast('请补充作品简介'); return; }
+        closeModal();
+        toast('投稿意向已提交，编辑将尽快联系你');
+      });
+    }
+    bindCloseButtons();
+  }
+
+  var heroSubmit = document.getElementById('mtHeroSubmit');
+  if(heroSubmit) heroSubmit.addEventListener('click', openSubmit);
+  var uploadBtn = document.getElementById('mtUploadBtn');
+  if(uploadBtn) uploadBtn.addEventListener('click', openSubmit);
+  var contactSubmit = document.getElementById('mtContactSubmit');
+  if(contactSubmit) contactSubmit.addEventListener('click', openSubmit);
+  var contactShare = document.getElementById('mtContactShare');
+  if(contactShare) contactShare.addEventListener('click', openShare);
+
+  /* ---------- 作者信息弹窗 ---------- */
+  var creatorInfo = {
+    '林小满': {role:'自然光人像 / 治愈系', desc:'擅长在傍晚与清晨捕捉柔和光线，作品色调温暖，关注人物松弛状态下的真实表情。', works:186, fans:'12.4 万'},
+    '陈屿影像': {role:'胶片质感 / 实验影像', desc:'长期研究胶片色彩与颗粒的数字化还原，作品带有强烈的年代氛围与叙事感。', works:243, fans:'18.7 万'},
+    '夜行摄影社': {role:'城市夜景 / 街头人像', desc:'三人组成的创作小组，专注城市夜间人像，习惯用霓虹与招牌光作为主要光源。', works:97, fans:'9.1 万'},
+    '阿吉的影棚': {role:'棚拍布光 / 教程向', desc:'十年商业摄影经验，乐于拆解布光方案，教程讲得细、能落地，是新手常用的参考作者。', works:152, fans:'15.3 万'}
+  };
+  document.querySelectorAll('[data-creator]').forEach(function(card){
+    card.addEventListener('click', function(){
+      var name = card.getAttribute('data-creator');
+      var info = creatorInfo[name];
+      if(!info) return;
+      openModal(
+        '<h3>' + name + '</h3>' +
+        '<p class="mt-modal-sub">' + info.role + '</p>' +
+        '<p style="font-size:13px;color:#c5c5d2;line-height:1.8;margin-bottom:14px">' + info.desc + '</p>' +
+        '<div class="mt-creator-data" style="justify-content:flex-start;border-top:1px dashed var(--mt-line);padding-top:12px">' +
+        '<div><b>' + info.works + '</b><span>作品</span></div>' +
+        '<div><b>' + info.fans + '</b><span>关注</span></div>' +
+        '</div>' +
+        '<div class="mt-modal-foot" style="margin-top:18px">' +
+        '<button class="mt-btn mt-btn-ghost" data-close-modal>关闭</button>' +
+        '<button class="mt-btn mt-btn-primary" id="mtFollowCreator">关注创作者</button>' +
+        '</div>'
+      );
+      var follow = document.getElementById('mtFollowCreator');
+      if(follow){
+        follow.addEventListener('click', function(){
+          closeModal();
+          toast('已关注「' + name + '」，新作品将第一时间通知你');
+        });
+      }
+      bindCloseButtons();
+    });
+  });
+
+  /* ---------- 回到顶部 ---------- */
+  var backTop = document.getElementById('mtBackTop');
+  if(backTop){
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 520) backTop.classList.add('is-show');
+      else backTop.classList.remove('is-show');
+    }, {passive:true});
+    backTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  /* ---------- 导航高亮（滚动监听） ---------- */
+  var navLinks = document.querySelectorAll('.mt-nav a[href^="#"]');
+  var sectionIds = [];
+  navLinks.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var sec = document.getElementById(id);
+    if(sec) sectionIds.push({id:id, el:sec, link:a});
+  });
+  if('IntersectionObserver' in window && sectionIds.length){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          navLinks.forEach(function(a){ a.classList.remove('is-active'); });
+          var match = sectionIds.filter(function(s){ return s.el === entry.target; })[0];
+          if(match) match.link.classList.add('is-active');
+        }
+      });
+    }, {rootMargin:'-45% 0px -50% 0px', threshold:0});
+    sectionIds.forEach(function(s){ obs.observe(s.el); });
+  }
+
+})();
+</script>
+</body>
+  </html>
